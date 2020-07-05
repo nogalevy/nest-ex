@@ -1,0 +1,22 @@
+import { Controller, Get, Put, Logger } from '@nestjs/common';
+import { AppService } from './app.service';
+
+@Controller()
+export class AppController {
+  constructor(private readonly appService: AppService) { }
+
+  @Get('hello')
+  getHello(): string {
+    return this.appService.getHello();
+  }
+
+  @Put('bye')
+  getBye(): string {
+    return this.appService.getBye();
+  }
+
+  @Put()
+  postBye(): number {
+    return 2342
+  }
+}
